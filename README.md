@@ -1,56 +1,33 @@
-[![](https://images.microbadger.com/badges/image/xblaster/tensor-guess.svg)](https://microbadger.com/images/xblaster/tensor-guess "Get your own image badge on microbadger.com")
+# README
 
-# tensor-guess
+# What this is
+- Google's [Inception CNN](https://ai.googleblog.com/2016/03/train-your-own-image-classifier-with.html) (trained on 100k images for 1 week) 
+- adapted to our use case using [Transfer Learning](https://www.tensorflow.org/hub/tutorials/image_retraining)
+- trained using a [docker container thanks to @xblaster](https://github.com/xblaster/tensor-guess) for 4000 epochs ~ 1 hour
+- has a flask REST API
 
-this project is just an helper with docker images based on tutorial from https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/index.html
+# How to use
 
-##requirements
+## API
+1. Spin up Flask API
 
-* docker !
-* git clone this project in a directory
+<img src="images/rest.png" width="800">
 
-##usage 
+2. Attach a photo as binary and post it to /classify
 
-You just need to make a "classifier" directory with a directory "data" inside it with all your images
-For example
-```
- [any_path]/my_own_classifier/
- [any_path]/my_own_classifier/data
- [any_path]/my_own_classifier/data/car
- [any_path]/my_own_classifier/data/moto
- [any_path]/my_own_classifier/data/bus
-```
- and then put your image on it. 
- This "classifier" directory will have your samples but also trained classifier after execution of "train.sh". 
+3. It got classified!
 
-##Train process
- 
-Just type
-```
- ./train.sh [any_path]/my_own_classifier
-``` 
-And it will do anything for you !
+<img src="images/classified.png" width="800">
 
-##Guess process
+## Training
+use case: predict if the images are chill or violent
 
-Just type for a single guess
-```
- ./guess.sh [any_path]/my_own_classifier /yourfile.jpg
-```
+1. downloaded a bunch of Google image search results using a [chrome ext](https://chrome.google.com/webstore/detail/fatkun-batch-download-ima/nnjjahlikiabnchcpehcpkdeckfgnohf)
 
-To guess an entire directory
-```
-./guessDir.sh [any_path]/classifier [any_path]/srcDir [any_path]/destDir
-```
+2. downloaded a bunch of youtube videos and turned them into frames using [this](https://github.com/Hvass-Labs/TensorFlow-Tutorials/blob/master/convert.py)
 
-## Example of result
-```
-# ./guess.sh /synced/tensor-lib/moto-classifier/ /synced/imagesToTest/moto21.jpg
-moto (score = 0.88331)
-car (score = 0.11669)
-```
+3. trained on the data set using [this](https://github.com/xblaster/tensor-guess) and splitting the data set 80:20 for train test randomly sampling from the images
 
+4. during training checkpoints saved in `tf_files/bottlenecks`, after training the tensorflow computation graph & weights are saved in `tf_files/retrained_graph.pb` as a protobuffer and class labels in `tf_files/retrained_labels.txt`
 
-##Remarks 
-
-Use absolute file path for classifier and images because for the moment my script do not support relative path (volume mounting)
+5. evaluated achieving 99% accuracy using `evaluate_vs_test_data.py`and works with the random photos in `rand_tests`, can run with `query_model.py` and point at the right image.
