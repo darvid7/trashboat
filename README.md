@@ -17,9 +17,20 @@ Precondition: install stuff in `requirements.txt`, virtual environments are a go
 
 2. Attach a photo as binary and post it to /classify
 
+Eminem is in `rand_tests/8.jepg`
+<img src="rand_tests/8.jepg" width="300">
+
+Idk what is happening in `rand_tests/3.jpg` but it doesn't look great.
+<img src="rand_tests/3.jpg" width="500">
+
+
 3. It got classified!
 
-<img src="images/classified.png" width="800">
+**Eminem (8.jpeg)  is chill!**
+<img src="images/classified_em.png" width="800">
+
+**This (3.jpg) is not chill (is violent)**
+<img src="images/classified_idk.png" width="800">
 
 ## Training
 use case: predict if the images are chill or violent
