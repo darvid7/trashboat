@@ -27,10 +27,10 @@ Idk what is happening in `rand_tests/3.jpg` but it doesn't look great.
 3. It got classified!
 
 **Eminem (8.jpeg)  is chill!**
-<img src="images/classified_em.png" width="800">
+<img src="images/classified_em_chill.png" width="800">
 
 **This (3.jpg) is not chill (is violent)**
-<img src="images/classified_idk.png" width="800">
+<img src="images/classified_idk_violent.png" width="800">
 
 ## Training
 use case: predict if the images are chill or violent
