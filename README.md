@@ -17,8 +17,8 @@ Precondition: install stuff in `requirements.txt`, virtual environments are a go
 
 2. Attach a photo as binary and post it to /classify
 
-Eminem is in `rand_tests/8.jepg`
-<img src="rand_tests/8.jepg" width="300">
+Eminem is in `rand_tests/8.jpeg`
+<img src="rand_tests/8.jpeg" width="300">
 
 Idk what is happening in `rand_tests/3.jpg` but it doesn't look great.
 <img src="rand_tests/3.jpg" width="500">
