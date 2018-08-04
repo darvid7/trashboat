@@ -1,0 +1,2 @@
+$  
+./train.sh /Users/David/Desktop/testtt/tensor-guess/tf_files
