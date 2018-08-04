@@ -13,7 +13,7 @@ Precondition: install stuff in `requirements.txt`, virtual environments are a go
 ## API
 1. Spin up Flask API
 
-<img src="images/rest.png" width="800">
+<img src="images/flask.png" width="800">
 
 2. Attach a photo as binary and post it to /classify
 
