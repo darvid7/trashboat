@@ -41,7 +41,7 @@ use case: predict if the images are chill or violent
 
 2. downloaded a bunch of youtube videos and turned them into frames using [this](https://github.com/Hvass-Labs/TensorFlow-Tutorials/blob/master/convert.py)
 
-3. trained on the data set using [this](https://github.com/xblaster/tensor-guess) and splitting the data set 80:20 for train test randomly sampling from the images
+3. trained on the data set using [this](https://github.com/xblaster/tensor-guess) splitting the data set 80:20 for train test randomly sampling from the images
 
 4. during training checkpoints saved in `tf_files/bottlenecks`, after training the tensorflow computation graph & weights are saved in `tf_files/retrained_graph.pb` as a protobuffer and class labels in `tf_files/retrained_labels.txt`
 
