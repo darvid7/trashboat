@@ -8,6 +8,8 @@
 
 # How to use
 
+Precondition: install stuff in `requirements.txt`, virtual environments are a good idea.
+
 ## API
 1. Spin up Flask API
 
