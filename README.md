@@ -2,9 +2,14 @@
 
 # What this is
 - Google's [Inception CNN](https://ai.googleblog.com/2016/03/train-your-own-image-classifier-with.html) (trained on 100k images for 1 week) 
+- Inception is a an image classification deep learning model with 1000 categories 
 - adapted to our use case using [Transfer Learning](https://www.tensorflow.org/hub/tutorials/image_retraining)
 - trained using a [docker container thanks to @xblaster](https://github.com/xblaster/tensor-guess) for 4000 epochs ~ 1 hour
 - has a flask REST API
+
+## Inception Architecture
+
+<img src="images/inception.png" width="800">
 
 # How to use
 
